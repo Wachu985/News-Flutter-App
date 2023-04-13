@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../generated/l10n.dart';
+
 class Params {
   final String languaje;
   final String category;
@@ -21,19 +23,19 @@ extension CategoryTypeExtension on CategoryType {
   String get categoryName {
     switch (this) {
       case CategoryType.general:
-        return 'General';
+        return S.current.tGeneral;
       case CategoryType.business:
-        return 'Business';
+        return S.current.tBusiness;
       case CategoryType.entertainment:
-        return 'Entertainment';
+        return S.current.tEntertainment;
       case CategoryType.health:
-        return 'Health';
+        return S.current.tHealth;
       case CategoryType.science:
-        return 'Science';
+        return S.current.tScience;
       case CategoryType.sports:
-        return 'Sports';
+        return S.current.tSports;
       case CategoryType.technology:
-        return 'Technology';
+        return S.current.tTechnology;
     }
   }
 

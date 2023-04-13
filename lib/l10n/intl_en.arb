@@ -1,0 +1,16 @@
+{
+  "tGeneral": "General",
+  "tBusiness": "Business",
+  "tEntertainment": "Entertainment",
+  "tHealth": "Health",
+  "tScience": "Science",
+  "tSports": "Sports",
+  "tTechnology": "Technology",
+  "tTitle": "Categories of News",
+  "tSubtitle": "Select the category of your preference.",
+  "tNoticias": "{noticia} News",
+  "tNoticiaC": "Selection of {noticia} News",
+  "tCategoryB": "Categories",
+  "tSettingsB": "Settings",
+  "tLeer": "Read More"
+}

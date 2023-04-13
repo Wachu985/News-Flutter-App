@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:news_project/src/core/error/exception.dart';
 import 'package:news_project/src/core/utils/params.dart';
@@ -22,11 +20,11 @@ class DioNewRemoteDatasource extends NewRemoteDatasource {
     try {
       List<NewModel> listNew = [];
       final results = await _client.get(
-          '$_urlBase?q=${param.category}&apiKey=${EnvironmentConfig.apiUrl}&language=${param.languaje},');
+          '$_urlBase?q=${param.category}&apiKey=${EnvironmentConfig.apiUrl}&pageSize=100&language=${param.languaje}');
       if (results.statusCode == 200) {
         final data = results.data['articles'];
         for (var element in data) {
-          listNew.add(NewModel.fromJson(jsonDecode(element)));
+          listNew.add(NewModel.fromJson(element));
         }
         return listNew;
       } else {
