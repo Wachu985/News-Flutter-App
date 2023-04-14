@@ -5,6 +5,8 @@ abstract class NewsEvent {
       _TransitionPage(param: param);
   factory NewsEvent.detailView({required New newDetail}) =>
       _DetailView(newDetail: newDetail);
+  factory NewsEvent.updateIndex({required int currentIndex}) =>
+      _UpdateIndex(currentIndex: currentIndex);
 }
 
 class _TransitionPage implements NewsEvent {
@@ -15,4 +17,9 @@ class _TransitionPage implements NewsEvent {
 class _DetailView implements NewsEvent {
   const _DetailView({required this.newDetail});
   final New newDetail;
+}
+
+class _UpdateIndex implements NewsEvent {
+  const _UpdateIndex({required this.currentIndex});
+  final int currentIndex;
 }

@@ -8,12 +8,14 @@ class NewsState extends Equatable {
       this.status = NewStatus.initial,
       this.news = const [],
       this.param,
-      this.newDetail});
+      this.newDetail,
+      this.currentIndex = 0});
   final String msgError;
   final NewStatus status;
   final List<New> news;
   final Params? param;
   final New? newDetail;
+  final int currentIndex;
 
   factory NewsState.initialState() => const NewsState();
 
@@ -22,11 +24,13 @@ class NewsState extends Equatable {
           NewStatus? status,
           List<New>? news,
           Params? param,
-          New? newDetail}) =>
+          New? newDetail,
+          int? currentIndex}) =>
       NewsState(
           msgError: msgError ?? this.msgError,
           status: status ?? this.status,
           news: news ?? this.news,
+          currentIndex: currentIndex ?? this.currentIndex,
           param: param ?? this.param,
           newDetail: newDetail ?? this.newDetail);
 
@@ -37,7 +41,8 @@ class NewsState extends Equatable {
         news,
         param ??
             Params(languaje: 'es', category: CategoryType.general.categoryName),
-        newDetail ?? ''
+        newDetail ?? '',
+        currentIndex
       ];
 }
 

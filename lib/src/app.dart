@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => DependencyInyection.sl<NewsBloc>(),
+      create: (context) => DependencyInyection.sl<NewsBloc>()..init(),
       child: MaterialApp(
         builder: (context, child) => ResponsiveWrapper.builder(child,
             maxWidth: 1200,

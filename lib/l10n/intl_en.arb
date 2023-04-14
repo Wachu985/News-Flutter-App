@@ -12,5 +12,8 @@
   "tNoticiaC": "Selection of {noticia} News",
   "tCategoryB": "Categories",
   "tSettingsB": "Settings",
-  "tLeer": "Read More"
+  "tLeer": "Read More",
+  "languaje": "en",
+  "tSettings": "Settings",
+  "tSubSettings": "System settings"
 }

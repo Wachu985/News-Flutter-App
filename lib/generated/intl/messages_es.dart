@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "languaje": MessageLookupByLibrary.simpleMessage("es"),
         "tBusiness": MessageLookupByLibrary.simpleMessage("Negocios"),
         "tCategoryB": MessageLookupByLibrary.simpleMessage("Categorías"),
         "tEntertainment":
@@ -36,8 +37,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "tNoticiaC": m0,
         "tNoticias": m1,
         "tScience": MessageLookupByLibrary.simpleMessage("Ciencia"),
+        "tSettings": MessageLookupByLibrary.simpleMessage("Ajustes"),
         "tSettingsB": MessageLookupByLibrary.simpleMessage("Ajustes"),
         "tSports": MessageLookupByLibrary.simpleMessage("Deportes"),
+        "tSubSettings":
+            MessageLookupByLibrary.simpleMessage("Ajustes del Sistema"),
         "tSubtitle": MessageLookupByLibrary.simpleMessage(
             "Seleccione la categoría de su preferencia."),
         "tTechnology": MessageLookupByLibrary.simpleMessage("Tecnología"),

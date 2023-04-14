@@ -189,6 +189,36 @@ class S {
       args: [],
     );
   }
+
+  /// `en`
+  String get languaje {
+    return Intl.message(
+      'en',
+      name: 'languaje',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get tSettings {
+    return Intl.message(
+      'Settings',
+      name: 'tSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `System settings`
+  String get tSubSettings {
+    return Intl.message(
+      'System settings',
+      name: 'tSubSettings',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -20,7 +20,7 @@ class DioNewRemoteDatasource extends NewRemoteDatasource {
     try {
       List<NewModel> listNew = [];
       final results = await _client.get(
-          '$_urlBase?q=${param.category}&apiKey=${EnvironmentConfig.apiUrl}&pageSize=100&language=${param.languaje}');
+          '$_urlBase?q=${param.category}&apiKey=${EnvironmentConfig.apiUrl}&pageSize=100&language=${param.languaje}&excludeDomains=hipertextual.com');
       if (results.statusCode == 200) {
         final data = results.data['articles'];
         for (var element in data) {

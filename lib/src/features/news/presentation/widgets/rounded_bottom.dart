@@ -5,6 +5,8 @@ import 'package:news_project/src/core/utils/params.dart';
 import 'package:news_project/src/features/news/presentation/bloc/news_bloc.dart';
 import 'package:news_project/src/features/news/presentation/screens/list_new_screen.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class TableRoundedBottm extends StatelessWidget {
   const TableRoundedBottm({
     super.key,
@@ -22,7 +24,7 @@ class TableRoundedBottm extends StatelessWidget {
                   BlocProvider.of<NewsBloc>(context).add(
                       NewsEvent.transitionPage(
                           param: Params(
-                              languaje: 'es',
+                              languaje: S.of(context).languaje,
                               category: CategoryType.general.categoryName)));
                   Navigator.push(
                       context,
@@ -38,7 +40,7 @@ class TableRoundedBottm extends StatelessWidget {
                   BlocProvider.of<NewsBloc>(context).add(
                       NewsEvent.transitionPage(
                           param: Params(
-                              languaje: 'es',
+                              languaje: S.of(context).languaje,
                               category: CategoryType.business.categoryName)));
                   Navigator.push(
                       context,
@@ -58,7 +60,7 @@ class TableRoundedBottm extends StatelessWidget {
                   BlocProvider.of<NewsBloc>(context).add(
                       NewsEvent.transitionPage(
                           param: Params(
-                              languaje: 'es',
+                              languaje: S.of(context).languaje,
                               category:
                                   CategoryType.entertainment.categoryName)));
                   Navigator.push(
@@ -75,7 +77,7 @@ class TableRoundedBottm extends StatelessWidget {
                   BlocProvider.of<NewsBloc>(context).add(
                       NewsEvent.transitionPage(
                           param: Params(
-                              languaje: 'es',
+                              languaje: S.of(context).languaje,
                               category: CategoryType.health.categoryName)));
                   Navigator.push(
                       context,
@@ -95,7 +97,7 @@ class TableRoundedBottm extends StatelessWidget {
                   BlocProvider.of<NewsBloc>(context).add(
                       NewsEvent.transitionPage(
                           param: Params(
-                              languaje: 'es',
+                              languaje: S.of(context).languaje,
                               category: CategoryType.science.categoryName)));
                   Navigator.push(
                       context,
@@ -111,7 +113,7 @@ class TableRoundedBottm extends StatelessWidget {
                   BlocProvider.of<NewsBloc>(context).add(
                       NewsEvent.transitionPage(
                           param: Params(
-                              languaje: 'es',
+                              languaje: S.of(context).languaje,
                               category: CategoryType.sports.categoryName)));
                   Navigator.push(
                       context,
@@ -131,7 +133,7 @@ class TableRoundedBottm extends StatelessWidget {
                   BlocProvider.of<NewsBloc>(context).add(
                       NewsEvent.transitionPage(
                           param: Params(
-                              languaje: 'es',
+                              languaje: S.of(context).languaje,
                               category: CategoryType.technology.categoryName)));
                   Navigator.push(
                       context,

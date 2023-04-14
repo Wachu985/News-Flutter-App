@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -16,8 +17,15 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
         super(NewsState.initialState()) {
     on<_TransitionPage>(_transitionPage);
     on<_DetailView>(_detailView);
+    on<_UpdateIndex>(_updateIndex);
   }
   final GetNews _getNews;
+  late final PageController _pageController;
+  PageController get pageController => _pageController;
+
+  void init() {
+    _pageController = PageController(initialPage: 0);
+  }
 
   FutureOr<void> _transitionPage(
       _TransitionPage event, Emitter<NewsState> emit) async {
@@ -31,5 +39,17 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
 
   FutureOr<void> _detailView(_DetailView event, Emitter<NewsState> emit) async {
     emit(state.copyWith(newDetail: event.newDetail));
+  }
+
+  @override
+  Future<void> close() {
+    _pageController.dispose();
+    return super.close();
+  }
+
+  FutureOr<void> _updateIndex(_UpdateIndex event, Emitter<NewsState> emit) {
+    emit(state.copyWith(currentIndex: event.currentIndex));
+    _pageController.animateToPage(event.currentIndex,
+        duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
   }
 }

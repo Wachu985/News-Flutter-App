@@ -12,5 +12,8 @@
   "tNoticiaC": "Selección de noticías sobre {noticia}",
   "tCategoryB": "Categorías",
   "tSettingsB": "Ajustes",
-  "tLeer": "Leer Más"
+  "tLeer": "Leer Más",
+  "languaje": "es",
+  "tSettings": "Ajustes",
+  "tSubSettings": "Ajustes del Sistema"
 }
