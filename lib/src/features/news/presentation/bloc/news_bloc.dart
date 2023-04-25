@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:intl/intl.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../../../core/utils/params.dart';
 import '../../domain/entities/news.dart';
 import '../../domain/usecases/get_news.dart';
@@ -18,6 +20,7 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
     on<_TransitionPage>(_transitionPage);
     on<_DetailView>(_detailView);
     on<_UpdateIndex>(_updateIndex);
+    on<_UpdateLanguaje>(_updateLanguaje);
   }
   final GetNews _getNews;
   late final PageController _pageController;
@@ -51,5 +54,16 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
     emit(state.copyWith(currentIndex: event.currentIndex));
     _pageController.animateToPage(event.currentIndex,
         duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
+  }
+
+  FutureOr<void> _updateLanguaje(
+      _UpdateLanguaje event, Emitter<NewsState> emit) {
+    if (event.newlanguaje == 'es') {
+      S.load(const Locale('es'));
+      emit(state.copyWith(currentLocale: Intl.getCurrentLocale()));
+    } else if (event.newlanguaje == 'en') {
+      S.load(const Locale('en'));
+      emit(state.copyWith(currentLocale: Intl.getCurrentLocale()));
+    }
   }
 }

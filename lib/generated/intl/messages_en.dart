@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "languaje": MessageLookupByLibrary.simpleMessage("en"),
         "tBusiness": MessageLookupByLibrary.simpleMessage("Business"),
+        "tCambiarIdioma":
+            MessageLookupByLibrary.simpleMessage("Change Language:"),
         "tCategoryB": MessageLookupByLibrary.simpleMessage("Categories"),
         "tEntertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
         "tGeneral": MessageLookupByLibrary.simpleMessage("General"),

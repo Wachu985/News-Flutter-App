@@ -7,6 +7,8 @@ abstract class NewsEvent {
       _DetailView(newDetail: newDetail);
   factory NewsEvent.updateIndex({required int currentIndex}) =>
       _UpdateIndex(currentIndex: currentIndex);
+  factory NewsEvent.updateLanguaje({required String newlanguaje}) =>
+      _UpdateLanguaje(newlanguaje: newlanguaje);
 }
 
 class _TransitionPage implements NewsEvent {
@@ -22,4 +24,9 @@ class _DetailView implements NewsEvent {
 class _UpdateIndex implements NewsEvent {
   const _UpdateIndex({required this.currentIndex});
   final int currentIndex;
+}
+
+class _UpdateLanguaje implements NewsEvent {
+  const _UpdateLanguaje({required this.newlanguaje});
+  final String newlanguaje;
 }

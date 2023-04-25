@@ -9,15 +9,18 @@ class NewsState extends Equatable {
       this.news = const [],
       this.param,
       this.newDetail,
-      this.currentIndex = 0});
+      this.currentIndex = 0,
+      this.currentLocale});
   final String msgError;
   final NewStatus status;
   final List<New> news;
   final Params? param;
   final New? newDetail;
   final int currentIndex;
+  final String? currentLocale;
 
-  factory NewsState.initialState() => const NewsState();
+  factory NewsState.initialState() =>
+      NewsState(currentLocale: Intl.getCurrentLocale());
 
   NewsState copyWith(
           {String? msgError,
@@ -25,14 +28,16 @@ class NewsState extends Equatable {
           List<New>? news,
           Params? param,
           New? newDetail,
-          int? currentIndex}) =>
+          int? currentIndex,
+          String? currentLocale}) =>
       NewsState(
           msgError: msgError ?? this.msgError,
           status: status ?? this.status,
           news: news ?? this.news,
           currentIndex: currentIndex ?? this.currentIndex,
           param: param ?? this.param,
-          newDetail: newDetail ?? this.newDetail);
+          newDetail: newDetail ?? this.newDetail,
+          currentLocale: currentLocale ?? this.currentLocale);
 
   @override
   List<Object> get props => [
@@ -42,7 +47,8 @@ class NewsState extends Equatable {
         param ??
             Params(languaje: 'es', category: CategoryType.general.categoryName),
         newDetail ?? '',
-        currentIndex
+        currentIndex,
+        currentLocale ?? ''
       ];
 }
 

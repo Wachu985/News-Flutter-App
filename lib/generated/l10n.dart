@@ -219,6 +219,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Change Language:`
+  String get tCambiarIdioma {
+    return Intl.message(
+      'Change Language:',
+      name: 'tCambiarIdioma',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
